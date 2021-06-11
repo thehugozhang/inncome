@@ -37,16 +37,22 @@
             <div class = "container subscribe-cont">
               <div class = "row subscribe-row">
                 <div class = "col-4 col-md-4 subscribe-col">
-                  <input type="text" class="form-control" placeholder="Name">
+                  <input id = "name" type="text" class="form-control" placeholder="Name">
                 </div>
                 <div class = "col-4 col-md-4 subscribe-col">
-                  <input type="text" class="form-control" placeholder="Email">
+                  <input id = "email" type="email" class="form-control" placeholder="Email">
                 </div>
                 <div class = "col-4 col-md-4 subscribe-col">
-                  <button type="button" class="btn btn-custom">Notify Me!</button>
+                  <button id = "submitEmail" type="button" class="btn btn-custom">Notify Me!</button>
                 </div>
               </div>
               <p class = "chilltext">Sign up now to receive updates and early adopter benefits!</p>
+            </div>
+            <div id = "emailAlert" class="alert alert-success alert-dismissible fade hide custom-alert" role="alert">
+              <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+              <button type="button" class="close" aria-label="Close" onclick="hideAlert()">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
 
             <div class = "container footer">
@@ -140,5 +146,31 @@
         }
       }, 1000);
     </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAOFKvPt3uxHNBPv64PHIU4ou2X1t1OvEI",
+        authDomain: "inncome-d0873.firebaseapp.com",
+        projectId: "inncome-d0873",
+        storageBucket: "inncome-d0873.appspot.com",
+        messagingSenderId: "703089948170",
+        appId: "1:703089948170:web:61b951a296efc0570091f3",
+        measurementId: "G-N69HXNG930"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="assets/js/mailing.js"></script>
   </body>
 </html>
